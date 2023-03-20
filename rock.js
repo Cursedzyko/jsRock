@@ -11,8 +11,8 @@ function getComputerChoice()
 
 function playRoundUtils(p, c, a)
 {
-	let win = "You win " + a[p].toLowerCase() + " beats " + a[c].toLowerCase() + "\nPlayer won!";
-	let lose = "You lose " + a[c].toLowerCase() + " beats " + a[p].toLowerCase() + "\nComputer won!";
+	let win = "You win " + a[p].toLowerCase() + " beats " + a[c].toLowerCase();
+	let lose = "You lose " + a[c].toLowerCase() + " beats " + a[p].toLowerCase();
 	if (c === p)
 		return("Draw");
 	else if ((p != 2) && (c != 2))
@@ -61,6 +61,13 @@ function game()
 			l += 1;
 	}
 	console.log("You won " + w + " times and computer " + l + " times");
+
+	if (w > l)
+		console.log("You win");
+	else if (w < l)
+		console.log("Computer win");
+	else
+		console.log("Draw");
 }
 
 game();
