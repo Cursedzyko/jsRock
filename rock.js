@@ -11,8 +11,8 @@ function getComputerChoice()
 
 function playRoundUtils(p, c, a)
 {
-	let win = "You win " + a[p].toLowerCase() + " beats " + a[c].toLowerCase();
-	let lose = "You lose " + a[c].toLowerCase() + " beats " + a[p].toLowerCase();
+	let win = "You win " + a[p].toLowerCase() + " beats " + a[c].toLowerCase() + "\nPlayer won!";
+	let lose = "You lose " + a[c].toLowerCase() + " beats " + a[p].toLowerCase() + "\nComputer won!";
 	if (c === p)
 		return("Draw");
 	else if ((p != 2) && (c != 2))
@@ -48,11 +48,19 @@ function playRound(playerSelection, computerSelection)
 
 function game()
 {
+	let l = 0;
+	let w = 0;
 	for (let i = 0; i < 5; i++)
 	{
 		let b = prompt("Enter rock, paper or scissors: ");
-		console.log(playRound(b, getComputerChoice()));
+		let c = playRound(b, getComputerChoice());
+		console.log(c);
+		if (c.includes("win"))
+			w += 1;
+		else if (c.includes("lose"))
+			l += 1;
 	}
+	console.log("You won " + w + " times and computer " + l + " times");
 }
 
 game();
