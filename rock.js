@@ -1,5 +1,5 @@
 const startButton = document.querySelector("#startbutton");
-console.log(startButton);
+// console.log(startButton);
 
 const game = document.querySelector("#game");
 game.style.display = "none";
@@ -10,7 +10,8 @@ startButton.onclick = function () {
 	else
 	{
 		startButton.style.display = "none";
-		game.style.display = "block";
+		game.style.display = "flex";
+		game.style.flexFlow = "wrap column";
 	}
 };
 
